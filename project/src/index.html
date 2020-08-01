@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="index.css">
   <script src="https://kit.fontawesome.com/56cec86fb6.js"></script>
+
+  
 </head>
 <body>
   <div class="container-fluid h-100">
@@ -48,138 +50,12 @@
       <h1>Projects</h1>
   </div>
 
-  <div class="container-fluid" id="projects">
-      <div class="row justify-content-center align-items-center projects">
-          <div class="col-12 col-lg-5">
-              <img src="../asset/projectOverviewGenerator.png" class="align-self-center" alt="...">
-          </div>
-          <div class="col-12 col-lg-4">
-              <h3 class="project_title mb-3">Course Helper</h3>
-              <article>
-                  <span><strong>Who is this project for?</strong></span>
-                  <br>
-                  <span>
-                      This project is for students at Westfield State University selecting the courses for future semesters with less 
-                      work by utilizing various features, such as schedule visualization, filter course by various categories, etc.
-                  </span>
-                  <hr>
-                  <span><strong>Key Points</strong></span>
-                  <br>
-                  <ul>
-                      <li>
-                          Using <strong>MySQL</strong> and <strong>AWS RDS</strong> to create the backend of a university class scheduler Android app build in Java
-                      </li>
-                      <li>
-                          Utilized <strong>AWS S3</strong> to store massive courses of web scraped information from the university’s website
-                      </li>
-                      <li>
-                          Implemented Auto-Scheduler that generates the combinations of perfect schedule from users’ input, filters out overlapped class-time, and binds the correct lab classes
-                      </li>
-                  </ul>                     
-                  <hr>
-                  <div class="row align-items-center">
-                      <div class="col-3 mr-auto used_lang">
-                          <span><strong>Languages</strong></span>
-                          <span>Java, SQL</span>
-                      </div>
-                      <div class="col-3 ml-auto projectIcons">
-                          <a href="https://play.google.com/store/apps/details?id=com.tomoaki.coursehelper" target="_blank"><i class="fas fa-play-circle"></i></a>
-                          <a href="https://github.com/tomoaki3284/WSUCourseHelperApp" target="_blank"><i class="fas fa-code"></i></a>
-                      </div>
-                  </div>
-                  
-              </article>
-          </div>
-      </div>
-      <hr>
-      <div class="row justify-content-center align-items-center projects">
-          <div class="col-12 col-lg-5">
-              <img src="../asset/dinningOverviewGenerator.png" class="align-self-center" alt="...">
-          </div>
-          <div class="col-12 col-lg-4">
-              <h3 class="project_title mb-3">WSU Dinning App</h3>
-              <article>
-                  <span><strong>Who is this project for?</strong></span>
-                  <br>
-                  <span>
-                      This projects is for students/visitors at Westfield State University viewing the current/future dinning menus 
-                      without having them open in Web browser(not compatible screen sizes). This helps the user to easily view/order menus 
-                      in different dinning places.
-                      <br>
-                  </span>
-                  <hr>
-                  <span><strong>Key Points</strong></span>
-                  <br>
-                  <ul>
-                      <li>
-                          Developed an app build in Java, which displays menus, locations, special events, etc correspond to each of the university dining places
-                      </li>
-                      <li>
-                          Utilized <strong>AWS Lambda</strong> to automate web scraping and JSON file upload to <strong>AWS S3</strong>
-                      </li>
-                      <li>
-                          Implemented email feedback and online food ordering features by using <strong>Firebase</strong> realtime database
-                      </li>
-                      <li>
-                          Developed app through Scrum Agile methodology/Git source control to collaborate with team’s developers
-                      </li>
-                  </ul>
-                  <hr>
-                  <div class="row align-items-center">
-                          <div class="col-3 mr-auto used_lang">
-                              <span><strong>Languages</strong></span>
-                              <span>Java, SQL</span>
-                          </div>
-                          <div class="col-3 ml-auto projectIcons">
-                              <a href="https://gitlab.com/brian.neveu/diningapp" target="_blank"><i class="fas fa-play-circle"></i></a>
-                              <a href="https://gitlab.com/brian.neveu/diningapp" target="_blank"><i class="fas fa-code"></i></a>
-                          </div>
-                  </div>
-              </article>
-          </div>
-      </div>
-      <hr>
-      <div class="row justify-content-center align-items-center projects">
-              <div class="col-12 col-lg-5">
-                  <img src="../asset/faceRecognitionOverview.png" class="align-self-center mr-3" alt="...">
-              </div>
-              <div class="col-12 col-lg-4">
-                  <h3 class="project_title mb-3">AI FaceBrain Model</h3>
-                  <article>
-                      <span><strong>Who is this project for?</strong></span>
-                      <br>
-                      <span>
-                          Anyone who has interest in AI field. 
-                      </span>
-                      <hr>
-                      <span><strong>Key Points</strong></span>
-                      <br>
-                      <ul>
-                          <li>
-                              Used Node.js and Express.js to create the backend server, and crafted RESTful API, which communicates with the PostgreSQL-based server, to be easily and securely used by clients
-                          </li>
-                          <li>
-                              Utilized ClarifAI API to generate datasets, and calculated the dataset to display square around the face in a given picture by users
-                          </li>
-                      </ul>
-                      <hr>
-                      <div class="row align-items-center">
-                              <div class="col-3 mr-auto used_lang">
-                                  <span><strong>Languages</strong></span>
-                                  <span>HTML/CSS/JavaScript, React.js, Node.js, Express.js, SQL</span>
-                              </div>
-                              <div class="col-3 ml-auto projectIcons">
-                                  <a href="https://github.com/tomoaki3284/WebrainFaceRecognition" target="_blank"><i class="fas fa-play-circle"></i></a>
-                                  <a href="https://github.com/tomoaki3284/WebrainFaceRecognition" target="_blank"><i class="fas fa-code"></i></a>
-                              </div>
-                      </div>
-                  </article>
-              </div>
-          </div>
-  </div>
+    <div class="container-fluid align-items-center" id="projects">
+    </div>
 
-  
-
-  <script src="./app.js"></script>
+    <script src="./app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

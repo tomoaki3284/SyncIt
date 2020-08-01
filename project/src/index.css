@@ -59,6 +59,10 @@ nav.navbar-transparent {
   text-decoration: underline;
 }
 
+li {
+  padding: 5px;
+}
+
 .projectGroup {
   margin-top: 100px;
   margin-bottom: 50px;
@@ -70,42 +74,51 @@ nav.navbar-transparent {
   margin-left: 20px;
 }
 
+.projectSlider {
+  width: 25%;
+}
+
 div.row.projects {
   margin-bottom: 50px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1300 px) {
+  .projectSlider {
+    width: 15%;
+  }
+}
+
+@media (max-width: 1200px) {
   /*Extra Large*/
   /*450,300*/
-  img {
-      width: 90%;
-      height: 90%;
+
+  .projectSlider {
+    width: 15%;
   }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   /*Large*/
   /*450,300*/
-  img {
-    width: 90%;
-    height: auto;
+  .projectSlider {
+    width: 60%;
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   /*middum*/
   /*450,300*/
-  img {
-      width: 90%;
-      height: auto;
+
+  .projectSlider {
+    width: 75%;
   }
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   /*middum*/
   /*450,300*/
-  img {
-      width: 90%;
-      height: auto;
+
+  .projectSlider {
+    width: 100%;
   }
 }
