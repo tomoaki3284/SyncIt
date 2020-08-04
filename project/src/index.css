@@ -13,17 +13,91 @@ html, body {
   
   align-items: center;
   padding: 0;
-  background-image: url('../asset/bg-nightcity-picture.jpg');
+  background-image: url('../asset/rainy_ground.jpg');
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   transition: 0.2s;
 
-  left: 49.99999%;
-  transform: translate(-50%);
+  /* left: 49.99999%;
+  transform: translate(-50%); */
+}
+
+.projectNavigator {
+  text-align: center;
+  display:table;
+  transition: 1s;
+}
+
+.projectTextWrapper {
+  height: 130px;
+  margin: auto;
+  margin-left: 30px;
+}
+
+.aboutMeTextWrapper {
+  height: 130px;
+  margin: auto;
+  margin-right: 30px;
+}
+
+#wsulogo {
+  width: 125px;
+  height: 125px;
+}
+
+#wsuname {
+  width: 300px;
+  height: 150px;
+}
+
+#universitycard {
+  height: 200px;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.aboutMeSection {
+  padding-top: 60px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url(../asset/rainy_windiow.jpg);
+}
+
+.navigator {
+  background: #f7f6ef;
+}
+
+.aboutMeText {
+  position: relative;
+  display: inline-block;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 75px;
+  padding: 10px;
+}
+
+div .projectText.box {
+  position: relative;
+  display: inline-block;
+  margin: auto;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 100px;
+  padding: 10px;
+  color: cornflowerblue;
+}
+
+.projectNavigator h1{
+  display:table-cell; vertical-align:middle
 }
 
 nav {
   transition: 0.5s;
+}
+
+.navbg-color{
+  background-color: rgba(35, 97, 35, 0.7);
 }
 
 nav.navbar-transparent {
@@ -31,14 +105,28 @@ nav.navbar-transparent {
   color: black;
 }
 
-.col-6.mx-auto.text-center h1{
-  font-size: 50px;
+#projects {
+  background-image: url(../asset/rainy_ground_dark.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   color: white;
+  font-size: 17px;
+}
+
+.descriptionBox {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.col-6.mx-auto.text-center.portfolioTitle{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: white;
+  font-size: 50px;
   transition: 0.2s;
 }
 
-.col-6.mx-auto.text-center h1:hover{
-  color: yellow;
+.col-6.mx-auto.text-center.portfolioTitle:hover{
+  font-weight: bold;
 }
 
 #icons i {
@@ -51,7 +139,7 @@ nav.navbar-transparent {
 }
 
 #icons i:hover {
-  color: yellow;
+  color: green;
   transform: translateY(10px);
 }
 
@@ -76,6 +164,24 @@ li {
 
 .projectSlider {
   width: 25%;
+}
+
+#projectGif {
+  width: 400px;
+  height: 300px;
+  margin: auto;
+  margin-right: 0;
+}
+
+#aboutMeImg {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  margin-left: 0;
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
 }
 
 div.row.projects {
@@ -105,7 +211,7 @@ div.row.projects {
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   /*middum*/
   /*450,300*/
 
@@ -121,4 +227,71 @@ div.row.projects {
   .projectSlider {
     width: 100%;
   }
+}
+
+.aboutMe_title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#resume_logo {
+  width: 500px;
+  height: 200px;
+}
+
+.flip-card {
+  width: 500px;
+  height: 200px;
+  transition: 0.5s;
+}
+
+.flip-card.expandHeight {
+  height: 500px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: white;
+  color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: rgba(255, 255, 255);
+  transform: rotateY(180deg);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

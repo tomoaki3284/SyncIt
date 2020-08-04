@@ -1,16 +1,25 @@
 var navbar = document.querySelector('.navbar');
 var headerView = document.querySelector('#header');
 var projectsDiv = document.querySelector('#projects');
+var projectNavigatorText = document.querySelector('.projectTextWrapper');
+var aboutMeNavigatorText = document.querySelector('.aboutMeTextWrapper');
+var expadableFlipCard = document.querySelector('.flip-card');
 
+var animated = false;
+var animatedAboutMe = false;
 
 var projects = [
   {
     name: "Course Helper App",
     imagePaths: [
-      "../asset/dinningApp_events.png",
-      "../asset/dinningApp_listOfHall.png",
-      "../asset/dinningApp_menu.png",
-      "../asset/dinningApp_locationInfo.png",
+      "../asset/courseHelper_homepage.png",
+      "../asset/courseHelper_viewer.png",
+      "../asset/courseHelper_schedule.png",
+      "../asset/courseHelper_automaViewer.png",
+      "../asset/courseHelper_automaBottomSheet.png",
+      "../asset/courseHelper_comboOption.png",
+      "../asset/courseHelper_automaSchedule.png",
+      "../asset/courseHelper_rateMyProfessor.png",
     ],
     about: "This project is for students at Westfield State University selecting the courses for future semesters with less work by utilizing various features, such as schedule visualization, filter course by various categories, etc.",
     keypoints: [
@@ -46,10 +55,8 @@ var projects = [
   {
     name: "AI FaceBrain Model",
     imagePaths: [
-      "../asset/dinningApp_events.png",
-      "../asset/dinningApp_listOfHall.png",
-      "../asset/dinningApp_menu.png",
-      "../asset/dinningApp_locationInfo.png",
+      "../asset/ai_homepage.png",
+      "../asset/ai_detect.png",
     ],
     about: "AI FaceRecognition Full Stack Website, user can pick random picture's URL to display square around the faces.",
     keypoints: [
@@ -66,41 +73,44 @@ main();
 
 function main() {
   loadObject();
+  projectNavigatorText.onmouseover = function() {
+    projectDivAnimation();
+  };
+  aboutMeNavigatorText.onmouseover = function() {
+    aboutMeDivAnimation();
+  };
+  expadableFlipCard.onmouseover = function() {
+    expadableFlipCard.classList.add("expandHeight");
+  }
+  expadableFlipCard.onmouseout = function() {
+    expadableFlipCard.classList.remove("expandHeight");
+  }
 }
 
 function loadObject() {
   let i = 0;
   for (i = 0; i < projects.length; i++) {
     var project = projects[i];
-    createProjectCard(project);
+    createProjectCard(project, i);
   }
 }
 
-function createProjectCard(project) {
-  /*
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="../asset/projectOverviewGenerator.png" alt="First slide">
-      </div>
-      ...
-    </div>
-  </div>
-  */
-
+function createProjectCard(project, i) {
   var bigContainerDiv = document.createElement("div");
   bigContainerDiv.classList.add("row");
   bigContainerDiv.classList.add("w-75");
   bigContainerDiv.classList.add("align-items-center");
   bigContainerDiv.classList.add("justify-content-center");
   bigContainerDiv.classList.add("m-auto");
-  addSlider(project, bigContainerDiv);
+  addSlider(project, bigContainerDiv, i);
   addProjectDescription(project, bigContainerDiv);
 }
 
 function addProjectDescription (project, bigContainerDiv) {
   var containerDiv = document.createElement("div");
   containerDiv.classList.add("col-lg-6");
+  containerDiv.classList.add("descriptionBox");
+  containerDiv.classList.add("mb-5");
 
   var title = document.createElement("h3");
   title.classList.add("project_title");
@@ -109,7 +119,7 @@ function addProjectDescription (project, bigContainerDiv) {
   containerDiv.appendChild(title);
 
   var article = document.createElement("article");
-  article.innerHTML = "<span><strong>About</strong><span><br>"+
+  article.innerHTML = "<span><strong>About</strong></span><br>"+
       "<span>" + project.about + "</span><hr><span><strong>Key Points</strong></span><br>"+
       "<ul>";
   for (let i=0; i<project.keypoints.length; i++) {
@@ -133,9 +143,15 @@ function addProjectDescription (project, bigContainerDiv) {
   bigContainerDiv.appendChild(containerDiv);
 }
 
-function addSlider(project, bigContainerDiv) {
+function addSlider(project, bigContainerDiv, idx) {
   var divSlider = document.createElement("div");
   divSlider.classList.add("col-lg-3");
+  //beacause picture is wide. Later, detect by size, not name
+  if(project.name === "AI FaceBrain Model"){
+    divSlider.classList.remove("col-lg-3");
+    divSlider.classList.add("col-lg-5");
+  }
+
   divSlider.classList.add("mr-5");
   divSlider.classList.add("projectSlider");
   divSlider.classList.add("mb-5");
@@ -206,29 +222,83 @@ function addSlider(project, bigContainerDiv) {
   bigContainerDiv.appendChild(divSlider);
 
   projectsDiv.appendChild(bigContainerDiv);
-  projectsDiv.appendChild(document.createElement("hr"));
+  // if(projects.length != idx-1)
+  //   projectsDiv.appendChild(document.createElement("hr"));
 }
 
 window.onscroll = function() {
   var top = window.scrollY;
   fadeNavbar(top);
   zoomInBackground(top);
+  fadeProjectNavigator(top);
+  animateAboutMe(top);
+}
+
+function animateAboutMe(top) {
+  let beginning = aboutMeNavigatorText.getBoundingClientRect().top;
+  console.log("Top: " + top);
+  console.log("Beg: " + beginning);
+  if(beginning <= 612){
+    if(!animatedAboutMe){
+      animatedAboutMe = true;
+      aboutMeDivAnimation();
+    }
+  } else if (beginning >= 700) {
+    animatedAboutMe = false;
+  }
+}
+
+function fadeProjectNavigator (top) {
+  // let height = rect.top;
+  let beginning = projectNavigatorText.getBoundingClientRect().top;
+  if(beginning <= 800){
+    if(!animated){
+      animated = true;
+      projectDivAnimation();
+    }
+  } else if (beginning > 600) {
+    animated = false;
+  }
+}
+
+function projectDivAnimation() {
+  anime({
+    targets: 'div.projectText',
+    translateY: [
+      {value: -200, duration: 500},
+      {value: 0, duration: 800},
+    ],
+    rotate: anime.stagger([-45, 45]),
+    delay: function(el,i,l){return i*100}
+  });
+}
+
+function aboutMeDivAnimation() {
+  anime({
+    targets: 'div.aboutMeText',
+    translateX: [
+      {value: -200, duration: 500},
+      {value: 0, duration: 1000},
+    ],
+    delay: function(el,i,l){return i*100}
+  });
 }
 
 function fadeNavbar(top) {
   // add fade effect on navbar. Make trasparent when 100 px down
   if (top > 50) {
     navbar.classList.add('navbar-transparent');
-    navbar.classList.remove('bg-dark');
+    navbar.classList.remove('navbg-color');
   } else {
     navbar.classList.remove('navbar-transparent');
-    navbar.classList.add('bg-dark');
+    navbar.classList.add('navbg-color');
   }
 }
 
+// now it's working like shifting text
 function zoomInBackground(top) {
   // add zoom-in effect when scroll down
-  let zoomIn = Number(100) + Number(top/15);
+  let zoomIn = Number(100) + Number(top/5);
   let widthString = "width:" + zoomIn +  "%";
   let heightString = "height:" + zoomIn + "%";
   if (top > 0) {
