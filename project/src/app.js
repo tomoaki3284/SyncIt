@@ -145,7 +145,9 @@ function addProjectDescription (project, bigContainerDiv) {
 
 function addSlider(project, bigContainerDiv, idx) {
   var divSlider = document.createElement("div");
-  divSlider.classList.add("col-lg-3");
+  divSlider.classList.add("col-xl-3");
+  divSlider.classList.add("col-lg-5");
+  divSlider.classList.add("col-md-7");
   //beacause picture is wide. Later, detect by size, not name
   if(project.name === "AI FaceBrain Model"){
     divSlider.classList.remove("col-lg-3");
