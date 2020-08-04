@@ -12,14 +12,14 @@ var projects = [
   {
     name: "Course Helper App",
     imagePaths: [
-      "../asset/courseHelper_homepage.png",
-      "../asset/courseHelper_viewer.png",
-      "../asset/courseHelper_schedule.png",
-      "../asset/courseHelper_automaViewer.png",
-      "../asset/courseHelper_automaBottomSheet.png",
-      "../asset/courseHelper_comboOption.png",
-      "../asset/courseHelper_automaSchedule.png",
-      "../asset/courseHelper_rateMyProfessor.png",
+      "project/asset/courseHelper_homepage.png",
+      "project/asset/courseHelper_viewer.png",
+      "project/asset/courseHelper_schedule.png",
+      "project/asset/courseHelper_automaViewer.png",
+      "project/asset/courseHelper_automaBottomSheet.png",
+      "project/asset/courseHelper_comboOption.png",
+      "project/asset/courseHelper_automaSchedule.png",
+      "project/asset/courseHelper_rateMyProfessor.png",
     ],
     about: "This project is for students at Westfield State University selecting the courses for future semesters with less work by utilizing various features, such as schedule visualization, filter course by various categories, etc.",
     keypoints: [
@@ -35,10 +35,10 @@ var projects = [
   {
     name: "Dinning App",
     imagePaths: [
-      "../asset/dinningApp_events.png",
-      "../asset/dinningApp_listOfHall.png",
-      "../asset/dinningApp_menu.png",
-      "../asset/dinningApp_locationInfo.png",
+      "project/asset/dinningApp_events.png",
+      "project/asset/dinningApp_listOfHall.png",
+      "project/asset/dinningApp_menu.png",
+      "project/asset/dinningApp_locationInfo.png",
     ],
     about: "This projects is for students/visitors at Westfield State University viewing the current/future dinning menus without having them open in Web browser(not compatible screen sizes). This helps the user to easily view/order menus in different dinning places.",
     keypoints: [
@@ -55,8 +55,8 @@ var projects = [
   {
     name: "AI FaceBrain Model",
     imagePaths: [
-      "../asset/ai_homepage.png",
-      "../asset/ai_detect.png",
+      "project/asset/ai_homepage.png",
+      "project/asset/ai_detect.png",
     ],
     about: "AI FaceRecognition Full Stack Website, user can pick random picture's URL to display square around the faces.",
     keypoints: [
